@@ -4,6 +4,9 @@ version = "0.1.0"
 description = "Google Fonts binding for Sphinx"
 authors = ["Kazuya Takei <myself@attakei.net>"]
 license = "Apache-2.0"
+packages = [
+    { include = "sphinxcontrib"}
+]
 
 [tool.poetry.dependencies]
 python = "^3.8 | ^3.7"
