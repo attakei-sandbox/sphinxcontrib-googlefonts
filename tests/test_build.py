@@ -20,6 +20,14 @@ def soup_html(app: TestApp, path: str) -> BeautifulSoup:
     return BeautifulSoup(html, "html.parser")
 
 
-@with_app(**gen_app_conf(confoverrides={}))
+@with_app(**gen_app_conf(confoverrides={
+    "googlefonts_families": ["Roboto"],
+}))
 def test_script_tags(app: TestApp, status, warning):  # noqa
-    soup_html(app, "index.html")
+    soup = soup_html(app, "index.html")
+    link = [
+        e
+        for e in soup.find_all("link", rel="stylesheet")
+        if e["href"].startswith("https://fonts.googleapis.com/css2")
+    ][0]["href"]
+    assert link == "https://fonts.googleapis.com/css2?family=Roboto"
