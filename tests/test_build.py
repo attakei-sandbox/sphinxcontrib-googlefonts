@@ -20,9 +20,7 @@ def soup_html(app: TestApp, path: str) -> BeautifulSoup:
     return BeautifulSoup(html, "html.parser")
 
 
-@with_app(**gen_app_conf(confoverrides={
-    "googlefonts_families": ["Roboto"],
-}))
+@with_app(**gen_app_conf(confoverrides={"googlefonts_families": ["Roboto"],}))
 def test_script_tags(app: TestApp, status, warning):  # noqa
     soup = soup_html(app, "index.html")
     link = [
