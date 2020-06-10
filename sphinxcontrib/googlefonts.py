@@ -1,8 +1,18 @@
 # flake8: noqa
-from typing import Any
+from typing import Any, List, Tuple
+from urllib.parse import quote_plus, urlencode
 
 
 __version__ = "0.1.0"
+
+
+def build_family_query(families: List[str]) -> List[Tuple[str, str]]:
+    """Convert from font family information to query.
+
+    :param families: Fornt family from sphinx config
+    :returns: query context key-value pairs
+    """
+    return [("family", quote_plus(f)) for f in families]
 
 
 def add_fonts_context(
@@ -11,9 +21,9 @@ def add_fonts_context(
     if len(app.config.googlefonts_families) == 0:
         return
     css_files = context.get("css_files", [])
-    for family in app.config.googlefonts_families:
-        href = f"https://fonts.googleapis.com/css2?family={family}"
-        css_files.append(href)
+    query = build_family_query(app.config.googlefonts_families)
+    href = f"https://fonts.googleapis.com/css2?{urlencode(query)}"
+    css_files.append(href)
     context["css_files"] = css_files
 
 
