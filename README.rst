@@ -47,6 +47,17 @@ Configure:
       font-family: 'Noto Sans JP', sans-serif;
     }
 
+
+Configuraions
+=============
+
+``googlefonts_families``
+------------------------
+
+List of font-family strings. Default is ``[]`` (empty).
+If this is empty, extension does not render anything.
+
+
 Support fonts
 =============
 
