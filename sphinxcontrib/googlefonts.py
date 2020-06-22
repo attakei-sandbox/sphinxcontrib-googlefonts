@@ -7,7 +7,7 @@ if False:
     from sphinx.application import Sphinx
 
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 
 def build_family_query(families: List[str]) -> List[Tuple[str, str]]:

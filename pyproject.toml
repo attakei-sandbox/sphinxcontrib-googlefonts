@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sphinxcontrib-googlefonts"
-version = "0.1.0"
+version = "0.1.1"
 description = "Google Fonts binding for Sphinx"
 authors = ["Kazuya Takei <myself@attakei.net>"]
 license = "Apache-2.0"
