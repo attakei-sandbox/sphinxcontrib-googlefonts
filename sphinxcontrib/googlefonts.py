@@ -2,6 +2,10 @@
 from typing import Any, List, Tuple
 from urllib.parse import quote_plus, urlencode
 
+if False:
+    # For type annotation
+    from sphinx.application import Sphinx
+
 
 __version__ = "0.1.0"
 
@@ -27,7 +31,7 @@ def add_fonts_context(
     context["css_files"] = css_files
 
 
-def setup(app):
+def setup(app: "Sphinx"):
     app.add_config_value("googlefonts_families", [], True)
     app.connect("html-page-context", add_fonts_context)
     return {
