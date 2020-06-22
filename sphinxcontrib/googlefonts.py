@@ -28,7 +28,7 @@ def add_fonts_context(
 
 
 def setup(app):
-    app.add_config_value("googlefonts_families", [], "html")
+    app.add_config_value("googlefonts_families", [], True)
     app.connect("html-page-context", add_fonts_context)
     return {
         "version": __version__,
