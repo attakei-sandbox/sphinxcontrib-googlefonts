@@ -22,7 +22,7 @@ Installation:
 
 .. code-block:: bash
 
-    pip install https://github.com/attakei-sandbox/sphinxcontrib-googlefonts/releases/download/v0.1.1/sphinxcontrib_googlefonts-0.1.1-py3-none-any.whl
+    pip install https://github.com/attakei/sphinxcontrib-googlefonts/releases/download/v0.1.1/sphinxcontrib_googlefonts-0.1.1-py3-none-any.whl
 
 Configure:
 
