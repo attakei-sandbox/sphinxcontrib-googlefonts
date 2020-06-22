@@ -57,3 +57,8 @@ To do
 
 * Support any parameters of Google Fonts API.
 * Shorthand config to apply fonts for simple selector
+
+License
+=======
+
+Apache 2.0. See `it <./LICENSE>`_
